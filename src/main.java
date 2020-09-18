@@ -9,75 +9,58 @@
 
 public class main {
 
-
-
     public static void main(String[] args) {
-        //array de objetos
-        Pelicula arrayMovies[] = new Pelicula[5]; //5 peliculas ; n-1
-        Serie arraySerie[] = new Serie[5]; //5 series ; n-1
-        //Construccion de Objetos
-        System.out.println("\n\n");
-        System.out.println("::Construccion de Objetos y Asignacion Default de Visto::");
-        //////////////////////////////Peliculas/////////////////////////////////////////////////
-        arrayMovies[0] = new Pelicula("The Avengers", "Accion", "Marvel", 2012, 150);
-        arrayMovies[1] = new Pelicula("Iron Man 3", "Accion", "Marvel", 2013, 120);
-        arrayMovies[2] = new Pelicula("Proyecto Power", "Accion , Fantasia , Emocionante", "Netflix", 2020, 113);
-        arrayMovies[3] = new Pelicula("Wonder Woman", "Apasionante , Inspirador , Emocionante", "Warner Bros", 2017, 141);
-        arrayMovies[4] = new Pelicula("No Se Aceptan Devoluciones", "Comedia , Drama", "Mexicana", 2013, 121);
-        //////////////////////////////Series/////////////////////////////////////////////////
-        arraySerie[0] = new Serie("Cobra Kai", "Drama Tv , Accion y Aventuras", "Netflix", 121,2);
-        arraySerie[1] = new Serie("Sense8", "Netflix");
-        arraySerie[1].setNumberSeason(4);
-        arraySerie[2] = new Serie("Outlander", "Netflix");
-        arraySerie[1].setNumberSeason(3);
-        arraySerie[3] = new Serie("The Seven Deadly Sins", "Drama Tv , Accion , Anime , ,Romance, Aventuras", "Netflix", 30,4);
-        arraySerie[4] = new Serie();
-        arraySerie[4].setTitle("Umbrella Academy");
-        arraySerie[4].setCreator("Netflix");
-        arraySerie[4].setGender("Accion , Drama , Superpoderes");
-        arraySerie[4].setLength(30);
-        arraySerie[4].setNumberSeason(2);
+            Pelicula peliculas[] = new Pelicula[5];
+            Serie series[] = new Serie[5];
+            Pelicula nuevaPelicula = new Pelicula ("", "", "", 0, 0);
+            Serie nuevaSerie = new Serie ("", 0, "", "", 0);
 
-        //Bucle que busca la Serie con mayor temporadas.
-        for (Serie listOfSeries : arraySerie) {
-            Serie.whichSeasonIsLonger(listOfSeries);
-        }
-                  // Fin del bucle///
+            peliculas[0] = new Pelicula ("The Dark Knight", "Action", "C. Nolan", 2008, 152);
+            peliculas[1] = new Pelicula ("The Matrix", "Action", "L Wachowski", 1999, 132);
+            peliculas[2] = new Pelicula ("Gladiador", "Adventure", "R. Scott", 2000, 155);
+            peliculas[3] = new Pelicula ("Avengers Endgame", "Action", "A. Russo", 2019, 181);
+            peliculas[4] = new Pelicula ("Avengers Infinity War", "Action", "A. Russo", 2018, 149);
 
-        //Marca en visto algunas Películas y Series con el método marcarVisto()
-        System.out.println("\n\n");
-        System.out.println("::Marcar Las Peliculas y Series que ya fueron vistas::");
-        ///Marcar Visto peliculas///
-        arrayMovies[0].checkViewed(); //checkViewed() = MarcarVisto();
-        arrayMovies[2].checkViewed();
-        //Marcar Visto Series//
-        arraySerie[1].checkViewed();
-        arraySerie[4].checkViewed();
+            series[0] = new Serie("Lucifer", "T. Kapinos");
+            series[0].setNumTemporadas(6);
+            series[1] = new Serie("The Umbrella Academy", "S. Vlackman");
+            series[1].setNumTemporadas(2);
+            series[2] = new Serie("Game of Thrones", "D Benioff");
+            series[2].setNumTemporadas(8);
+            series[3] = new Serie("Grey's Anatomy", "S. Rhimes");
+            series[3].setNumTemporadas(17);
+            series[4] = new Serie("Breaking Bad", "V. Gilligan");
+            series[4].setNumTemporadas(5);
 
-        // Imprimir lista de peliculas visualizadas
-        System.out.println("\n\n");
-        System.out.println("::Mostrar Lista de Peliculas y Series Vistas con el tiempo de Visualizacion::");
-        printListOfViewed(Pelicula.listMovieViewed,Serie.listSeriesViewed);
-        //llamando al metodo toString de cada clase para imprimir la informacion de las peliculas y series.
-        System.out.println("\n\n");
-        System.out.println("::Mostrar informacion de todas las peliculas::");
-        for (int i = 0; i < arrayMovies.length ; i++) {
-            System.out.println(arrayMovies[i]);
-        }
-        for (int i = 0; i < arraySerie.length ; i++) {
-            System.out.println(arraySerie[i]);
+            peliculas[1].marcarVisto();
+            peliculas[3].marcarVisto();
+            series[0].marcarVisto();
+            series[4].marcarVisto();
+
+            System.out.println("Peliculas vistas:");
+            for(Pelicula pelicula : peliculas) {
+                if(pelicula.esVisto())
+                    System.out.println("Titulo. "+pelicula.getTitulo()+"\nDuracion: "+pelicula.getDuracion()+" Minutos");
+                if(pelicula.getAño() > nuevaPelicula.getAño())
+                    nuevaPelicula = pelicula;
+            }
+
+            System.out.println("\nSeries vistas");
+            for(Serie serie : series) {
+                if(serie.esVisto()) {
+                    System.out.println("Titulo: "+serie.getTitulo()+"\nDuracion: "+serie.getDuracion()+" Minutos");
+                    if(serie.getNumTemporadas()> nuevaSerie.getNumTemporadas())
+                        nuevaSerie = serie;
+                }
+            }
+
+            System.out.println("\nPelicula más nueva");
+            System.out.println(nuevaPelicula.toString());
+            System.out.println("\nSere con más temporadas");
+            System.out.println(nuevaSerie.toString());
+
+
         }
 
-    }
-    public static void printListOfViewed(String[][] listMovie,String [][] listSeries) {
-        for (int i = 0; i < Serie.sizeMoviesViewed; i++) {
-            Pelicula toPrint = new Pelicula();
-            System.out.println(toPrint.messageViewed(listMovie[i][0],listMovie[i][1]));
-        }
-        for (int i = 0; i < Serie.sizeSeriesViewed; i++) {
-            Pelicula toPrint = new Serie();
-            System.out.println(toPrint.messageViewed(listSeries[i][0],listSeries[i][1]));
-        }
-    }
 
-    }
+}
