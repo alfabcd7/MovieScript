@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="9fc29f95-23c0-45fa-a018-4be67285b711" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageViewManager">
+    <option name="myElementSize" value="271" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="Interface" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1hO7qhi5GFHuxM3jQjdxepwOngM" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="OverrideImplement.combined" value="false" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.language" />
+  </component>
+  <component name="RunManager">
+    <configuration name="main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="main" />
+      <module name="netflixScript" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9fc29f95-23c0-45fa-a018-4be67285b711" name="Default Changelist" comment="" />
+      <created>1599870476661</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1599870476661</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="2859" y="246" width="561" height="568" key="#com.intellij.ide.util.MemberChooser" timestamp="1600303978920">
+      <screen x="1920" y="31" width="1920" height="1040" />
+    </state>
+    <state x="2859" y="246" width="561" height="568" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/1920.31.1920.1040@1920.31.1920.1040" timestamp="1600303978920" />
+    <state width="1877" height="348" key="GridCell.Tab.0.bottom" timestamp="1600443210416">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.31.1920.1040@1920.31.1920.1040" timestamp="1600356470123" />
+    <state width="1877" height="348" key="GridCell.Tab.0.bottom/0.0.1920.1080/1920.-9.1920.1080@0.0.1920.1080" timestamp="1600443210416" />
+    <state width="1877" height="348" key="GridCell.Tab.0.center" timestamp="1600443210416">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/1920.31.1920.1040@1920.31.1920.1040" timestamp="1600356470123" />
+    <state width="1877" height="348" key="GridCell.Tab.0.center/0.0.1920.1080/1920.-9.1920.1080@0.0.1920.1080" timestamp="1600443210416" />
+    <state width="1877" height="348" key="GridCell.Tab.0.left" timestamp="1600443210416">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/1920.31.1920.1040@1920.31.1920.1040" timestamp="1600356470123" />
+    <state width="1877" height="348" key="GridCell.Tab.0.left/0.0.1920.1080/1920.-9.1920.1080@0.0.1920.1080" timestamp="1600443210416" />
+    <state width="1877" height="348" key="GridCell.Tab.0.right" timestamp="1600443210416">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/1920.31.1920.1040@1920.31.1920.1040" timestamp="1600356470123" />
+    <state width="1877" height="348" key="GridCell.Tab.0.right/0.0.1920.1080/1920.-9.1920.1080@0.0.1920.1080" timestamp="1600443210416" />
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1600443210416">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.31.1920.1040@1920.31.1920.1040" timestamp="1600356308951" />
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1080/1920.-9.1920.1080@0.0.1920.1080" timestamp="1600443210416" />
+    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1600443210416">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040/1920.31.1920.1040@1920.31.1920.1040" timestamp="1600356308951" />
+    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1080/1920.-9.1920.1080@0.0.1920.1080" timestamp="1600443210416" />
+    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1600443210416">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040/1920.31.1920.1040@1920.31.1920.1040" timestamp="1600356308951" />
+    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1080/1920.-9.1920.1080@0.0.1920.1080" timestamp="1600443210416" />
+    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1600443210416">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040/1920.31.1920.1040@1920.31.1920.1040" timestamp="1600356308951" />
+    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1080/1920.-9.1920.1080@0.0.1920.1080" timestamp="1600443210416" />
+    <state x="2216" y="204" key="SettingsEditor" timestamp="1600149965758">
+      <screen x="1920" y="31" width="1920" height="1040" />
+    </state>
+    <state x="2216" y="204" key="SettingsEditor/0.0.1920.1040/1920.31.1920.1040@1920.31.1920.1040" timestamp="1600149965758" />
+    <state x="2543" y="256" width="672" height="678" key="search.everywhere.popup" timestamp="1600285481744">
+      <screen x="1920" y="31" width="1920" height="1040" />
+    </state>
+    <state x="2543" y="256" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.31.1920.1040@1920.31.1920.1040" timestamp="1600285481744" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/netflixScript$main.ic" NAME="main Coverage Results" MODIFIED="1600320980865" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+  </component>
+</project>
