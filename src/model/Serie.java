@@ -1,3 +1,5 @@
+package model;
+
 import java.util.Scanner;
 
 /*
@@ -71,8 +73,8 @@ public class Serie extends Pelicula implements IVisualizable {
     public String toString() {
         String messageLongerSeason;
         messageLongerSeason = (longerSeason.getTitle() == this.getTitle())?  longerSeason.getTitle() +
-                " Fue la Serie Con un mayor numero de temporadas siendo igual a : " + longerSeason.numberSeason : "....";
-        return ":: Serie\n"+
+                " Fue la model.Serie Con un mayor numero de temporadas siendo igual a : " + longerSeason.numberSeason : "....";
+        return ":: model.Serie\n"+
                         "title='" + super.getTitle() + '\'' +
                                 ", creator='" + super.getCreator() + '\'' +
                                 ", year=" + super.getYear() +
@@ -86,7 +88,7 @@ public class Serie extends Pelicula implements IVisualizable {
         if (viewed == false) {
             viewed = true;
             listMovieViewed(this.getTitle());
-            System.out.println("La Serie "+ this.getTitle() + " cambio a un estado de `Visto´");
+            System.out.println("La model.Serie "+ this.getTitle() + " cambio a un estado de `Visto´");
         }else{
             isViewed();
         }
@@ -95,10 +97,10 @@ public class Serie extends Pelicula implements IVisualizable {
     @Override
     public boolean isViewed() {
         if (viewed == true){
-            System.out.println("La Serie "+  this.getTitle() + " Ya Ha Sido Vista");
+            System.out.println("La model.Serie "+  this.getTitle() + " Ya Ha Sido Vista");
             return true;
         }else{
-            System.out.println("La Serie "+ this.getTitle() + " No Ha Sido Vista");
+            System.out.println("La model.Serie "+ this.getTitle() + " No Ha Sido Vista");
             return false;
         }
     }
@@ -109,7 +111,7 @@ public class Serie extends Pelicula implements IVisualizable {
             if (this.getLength() == 0) {
                 do {
                     Scanner sc = new Scanner(System.in);
-                    System.out.println("No existe una duracion de minutos por episodio de la Serie establecida como :" + this.getTitle() + " , ingreselo(Obligatoriamente) :");
+                    System.out.println("No existe una duracion de minutos por episodio de la model.Serie establecida como :" + this.getTitle() + " , ingreselo(Obligatoriamente) :");
                     this.setLength(sc.nextInt());
                 }while (this.getLength() == 0);
                 System.out.println("Se establecio un total de " + this.getLength() + " minutos por episodio a la serie de : " + this.getTitle());
@@ -124,7 +126,7 @@ public class Serie extends Pelicula implements IVisualizable {
     @Override
     public String messageViewed(String movie, String time) {
         String message;
-        message = "la Serie : " + movie + " fue visualizada";
+        message = "la model.Serie : " + movie + " fue visualizada";
         message = message + " con una duracion total de : " + time + " minutos por Episodio";
         return message;
     }
@@ -133,7 +135,7 @@ public class Serie extends Pelicula implements IVisualizable {
     public void listMovieViewed(String movie) { //metodo para agregar a lista de Series visualizadas.
         if (viewed == true) {
             listSeriesViewed[sizeSeriesViewed++][0] = movie;//agrega a "lista de Series visualizadas" usando como indice el valor sizeSeriesViewed estatico para luego sumarle +1.
-            listSeriesViewed[sizeSeriesViewed - 1][1] = Integer.toString(timeViewed()); //capturo la duracion de la Serie y la paso a string.
+            listSeriesViewed[sizeSeriesViewed - 1][1] = Integer.toString(timeViewed()); //capturo la duracion de la model.Serie y la paso a string.
         }
     }
     public static void whichSeasonIsLonger(Serie serie) { //metodo para detectar cual es la serie con mayor temporada

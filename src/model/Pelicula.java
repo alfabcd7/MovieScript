@@ -1,31 +1,16 @@
+package model;
+
+import model.IVisualizable;
+
 import java.util.Scanner;
 
-/*
-Para completar esta tarea debes:
-Desarrollar un código de Java siguiendo los pasos a continuación:
-Crea una clase llamada Pelicula con las siguientes características:
-• Atributos: titulo, genero, creador, año, duracion y visto.
-• Constructores:
-• Un constructor default.
-• Un constructor con el titulo y creador. Los demás campos tendrán su valor default por tipo de dato. Visto tendrá false por defecto.
-• Un constructor con todos los atributos, excepto visto.
-• Métodos:
-• Métodos get de todos los atributos, excepto visto.
-• Métodos set de todos los atributos, excepto visto.
-• Sobreescribe el método toString.
 
-3. En principio, las clases anteriores no son padre-hija, pero sí tienen atributos en común. Realiza el análisis correcto e impleméntalo para tener un óptimo resultado.
- */
 public class Pelicula implements IVisualizable {
     protected static int sizeMoviesViewed = 0; // se almacena el conteo de peliculas marcada como vistas
     protected static String [][] listMovieViewed = new String[5][2]; //almacena lista de peliculas visualizadas // se envia a la clase padre.
-    //attributes //atributos
-    private String title; //titulo
-    private String gender; //genero
-    private String creator; //creador
+
     private int year; //año
-    private int length;//duracion
-    protected boolean viewed = false;//visto // tiene un modificador de acceso protected para que la clase hija pueda verlo
+
 
 
     //Builders //constructores
@@ -96,7 +81,7 @@ public class Pelicula implements IVisualizable {
         }else {
             text = "<<La pelicula es anterior al año 2020.>>"; //imprimi el sgte mensaje en caso de ser "false".
         }
-        return ":: Pelicula:\n" + "Titulo ='" + this.title + '\'' +
+        return ":: model.Pelicula:\n" + "Titulo ='" + this.title + '\'' +
                 "; Genero='" + this.gender + '\'' +
                 "; Creador='" + this.creator + '\'' +
                 "; Año=" + this.year +
@@ -120,10 +105,10 @@ public class Pelicula implements IVisualizable {
     @Override
     public boolean isViewed() {
         if (viewed == true) { //si es true
-            System.out.println("La Pelicula " + this.title + " Ya Ha Sido Vista"); //imprime esto
+            System.out.println("La model.Pelicula " + this.title + " Ya Ha Sido Vista"); //imprime esto
             return true;
         } else { //sino
-            System.out.println("La Pelicula " + this.title + " No Ha Sido Vista");//esto
+            System.out.println("La model.Pelicula " + this.title + " No Ha Sido Vista");//esto
             return false;
         }
     }
@@ -148,7 +133,7 @@ public class Pelicula implements IVisualizable {
 
     public String messageViewed(String movie, String time) {
         String message;
-        message = "la Pelicula : " + movie + " fue visualizada";
+        message = "la model.Pelicula : " + movie + " fue visualizada";
         message = message + " con una duracion total de : " + time + " minutos";
         return message;
     }

@@ -7,14 +7,17 @@
 • Por último, indica la serie con más temporadas y la película del año más reciente. Muéstralos en pantalla con toda su información (usa el método toString()).
  */
 
+import model.Pelicula;
+import model.Serie;
+
 public class main {
 
 
 
     public static void main(String[] args) {
         //array de objetos
-        Pelicula arrayMovies[] = new Pelicula[5]; //5 peliculas ; n-1
-        Serie arraySerie[] = new Serie[5]; //5 series ; n-1
+        Pelicula[] arrayMovies = new Pelicula[5]; //5 peliculas ; n-1
+        Serie[] arraySerie = new Serie[5]; //5 series ; n-1
         //Construccion de Objetos
         System.out.println("\n\n");
         System.out.println("::Construccion de Objetos y Asignacion Default de Visto::");
@@ -38,7 +41,7 @@ public class main {
         arraySerie[4].setLength(30);
         arraySerie[4].setNumberSeason(2);
 
-        //Bucle que busca la Serie con mayor temporadas.
+        //Bucle que busca la model.Serie con mayor temporadas.
         for (Serie listOfSeries : arraySerie) {
             Serie.whichSeasonIsLonger(listOfSeries);
         }
@@ -61,7 +64,7 @@ public class main {
         //llamando al metodo toString de cada clase para imprimir la informacion de las peliculas y series.
         System.out.println("\n\n");
         System.out.println("::Mostrar informacion de todas las peliculas::");
-        for (int i = 0; i < arrayMovies.length ; i++) {
+        for (int i = 0; i < arrayMovies.length ; i++) { // Podrias ser un for object?
             System.out.println(arrayMovies[i]);
         }
         for (int i = 0; i < arraySerie.length ; i++) {
