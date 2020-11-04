@@ -20,13 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="65fb211e-dcc2-422d-a95a-52b4125bb0ef" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/IVisualizable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/IVisualizable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pelicula.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Pelicula.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Serie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Serie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Audiovisual.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Audiovisual.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Pelicula.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Pelicula.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Serie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Serie.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,6 +51,20 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
+  <component name="RunManager">
+    <configuration name="main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="main" />
+      <module name="netflixScript" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.main" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -74,15 +86,76 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="765" y="223" key="#com.intellij.ide.util.MemberChooser" timestamp="1600884762535">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state x="765" y="223" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1600884762535" />
-    <state x="2059" y="22" width="1534" height="1059" key="dock-window-1" timestamp="1600884029485">
+    <state x="2685" y="223" key="#com.intellij.ide.util.MemberChooser" timestamp="1604294770067">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
+    <state x="765" y="223" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1600884762535" />
+    <state x="2685" y="223" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1604294770067" />
+    <state width="1860" height="360" key="GridCell.Tab.0.bottom" timestamp="1604523282764">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1860" height="360" key="GridCell.Tab.0.bottom/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1604523282764" />
+    <state width="1860" height="360" key="GridCell.Tab.0.center" timestamp="1604523282764">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1860" height="360" key="GridCell.Tab.0.center/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1604523282764" />
+    <state width="1860" height="360" key="GridCell.Tab.0.left" timestamp="1604523282764">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1860" height="360" key="GridCell.Tab.0.left/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1604523282764" />
+    <state width="1860" height="360" key="GridCell.Tab.0.right" timestamp="1604523282764">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1860" height="360" key="GridCell.Tab.0.right/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1604523282764" />
+    <state width="1860" height="360" key="GridCell.Tab.1.bottom" timestamp="1604523282764">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1860" height="360" key="GridCell.Tab.1.bottom/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1604523282764" />
+    <state width="1860" height="360" key="GridCell.Tab.1.center" timestamp="1604523282764">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1860" height="360" key="GridCell.Tab.1.center/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1604523282764" />
+    <state width="1860" height="360" key="GridCell.Tab.1.left" timestamp="1604523282764">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1860" height="360" key="GridCell.Tab.1.left/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1604523282764" />
+    <state width="1860" height="360" key="GridCell.Tab.1.right" timestamp="1604523282764">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1860" height="360" key="GridCell.Tab.1.right/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1604523282764" />
+    <state x="32" y="44" width="1524" height="1067" maximized="true" key="dock-window-1" timestamp="1604501596187">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
     <state x="2059" y="22" width="1534" height="1059" key="dock-window-1/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1600884029485" />
+    <state x="32" y="44" width="1524" height="1067" maximized="true" key="dock-window-1/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1604501596187" />
+    <state x="0" y="0" width="1424" height="1067" key="dock-window-2" timestamp="1604284592383">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="0" y="0" width="1424" height="1067" key="dock-window-2/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1604284592383" />
+    <state x="616" y="250" key="run.anything.popup" timestamp="1604521171110">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="616" y="250" key="run.anything.popup/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1604521171110" />
+    <state x="2543" y="235" key="search.everywhere.popup" timestamp="1604386155892">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2543" y="235" key="search.everywhere.popup/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1604386155892" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/model/Serie.java</url>
+          <line>4</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/netflixScript$main.ic" NAME="main Coverage Results" MODIFIED="1600320980865" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

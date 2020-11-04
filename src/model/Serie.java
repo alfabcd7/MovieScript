@@ -19,11 +19,11 @@ import java.util.Scanner;
 
 3. En principio, las clases anteriores no son padre-hija, pero sí tienen atributos en común. Realiza el análisis correcto e impleméntalo para tener un óptimo resultado.
  */
-public class Serie extends Pelicula implements IVisualizable {
+public class Serie extends Audiovisual {
     protected static int sizeSeriesViewed = 0;
     protected static String [][] listSeriesViewed = new String[5][2];//almacena lista de Series visualizadas // se envia a la clase hija.
-
     protected static Serie longerSeason;
+
     //attributes //atributos
     private  int numberSeason = 1;
 
@@ -31,11 +31,10 @@ public class Serie extends Pelicula implements IVisualizable {
 
     //Builders //constructores
     public Serie(){
-
+       super();
     }
     public Serie(String title , String creator){
         super(title,creator);
-
     }
 
     public Serie(String title, String gender, String creator, int length, int numberSeason) {
@@ -45,10 +44,9 @@ public class Serie extends Pelicula implements IVisualizable {
         super.setLength(length);
         this.setNumberSeason(numberSeason);
         /* no llamamos al constructor padre de la siguiente manera super(title,gender,creator,length);
-         porque a pesar que serie hereda de pelicula , "year o año" No es un atributo que se desea q
+         porque a pesar que serie hereda de Audiovisual , "year o año" No es un atributo que se desea q
         herede serie (Segun lo descrito en el problema) , por tanto existe la opcion de volver a sobrecargar
          el constructor pelicula o hacer lo dado , el cual encaja con la peticion del ejercicio.*/
-
     }
     //Getters
     public int getNumberSeason() {
@@ -71,18 +69,18 @@ public class Serie extends Pelicula implements IVisualizable {
 
     @Override
     public String toString() {
-        String messageLongerSeason;
-        messageLongerSeason = (longerSeason.getTitle() == this.getTitle())?  longerSeason.getTitle() +
-                " Fue la model.Serie Con un mayor numero de temporadas siendo igual a : " + longerSeason.numberSeason : "....";
+ //       String messageLongerSeason;
+   //     messageLongerSeason = (longerSeason.getTitle() == this.getTitle())?  longerSeason.getTitle() +
+     //           " Fue la model.Serie Con un mayor numero de temporadas siendo igual a : " + longerSeason.numberSeason : "....";
         return ":: model.Serie\n"+
                         "title='" + super.getTitle() + '\'' +
                                 ", creator='" + super.getCreator() + '\'' +
-                                ", year=" + super.getYear() +
+                                ", year=" +  + super.getYear()+
                                 ", length=" + super.getLength() +
                                 ", viewed=" + this.viewed +
-                                "\n" +"numberSeason: " + this.numberSeason + "::" + messageLongerSeason ;
+                                "\n" +"numberSeason: " + this.numberSeason + "::" ;//+ messageLongerSeason ;
     }
-
+/*
     @Override
     public void checkViewed() {
         if (viewed == false) {
@@ -147,4 +145,6 @@ public class Serie extends Pelicula implements IVisualizable {
             serie = (longerSeason.getLength() < serie.getLength())? serie:longerSeason; //tomara la serie con mayor duracion por episodio
         }
     }
+
+ */
 }

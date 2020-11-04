@@ -5,91 +5,41 @@ import model.IVisualizable;
 import java.util.Scanner;
 
 
-public class Pelicula implements IVisualizable {
+public class Pelicula extends Audiovisual{
+    final String NEWLINE = "\n";
     protected static int sizeMoviesViewed = 0; // se almacena el conteo de peliculas marcada como vistas
     protected static String [][] listMovieViewed = new String[5][2]; //almacena lista de peliculas visualizadas // se envia a la clase padre.
 
-    private int year; //año
 
 
 
     //Builders //constructores
     public Pelicula() { //default constructor
     }
-
     public Pelicula(String title, String creator) { //constructor con titulo y creador
-        this.title = title;
-        this.creator = creator;
+        super(title,creator);
     }
-
     public Pelicula(String title, String gender, String creator, int year, int length) { // constructor con todos los atributos.
-        this.title = title;
-        this.gender = gender;
-        this.creator = creator;
-        this.year = year;
-        this.length = length;
+        super(title,gender,creator,year,length);
     }
-    //Getters
-
-    public String getTitle() {
-        return title;
-    }
-
-    public String getGender() {
-        return gender;
-    }
-
-    public String getCreator() {
-        return creator;
-    }
-
-    public int getYear() {
-        return year;
-    }
-
-    public int getLength() {
-        return length;
-    }
-
-    //Setters
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public void setGender(String gender) {
-        this.gender = gender;
-    }
-
-    public void setCreator(String creator) {
-        this.creator = creator;
-    }
-
-    public void setYear(int year) {
-        this.year = year;
-    }
-
-    public void setLength(int length) {
-        this.length = length;
-    }
-
     @Override
     public String toString() {
-        String text ; // almacenara el mensaje a ensamblar al final
+       /* String text ; // almacenara el mensaje a ensamblar al final
         if (recentMovie(this.title)==true){ //si recentMovie vota "True" significa que la pelicula fue estrenada en 2020
             text = "<<La pelicula fue estrenada el Presente Año , por tanto es una de las mas recientes.>>"; //imprime el sgte mensaje en caso de ser "true".
         }else {
             text = "<<La pelicula es anterior al año 2020.>>"; //imprimi el sgte mensaje en caso de ser "false".
         }
-        return ":: model.Pelicula:\n" + "Titulo ='" + this.title + '\'' +
-                "; Genero='" + this.gender + '\'' +
-                "; Creador='" + this.creator + '\'' +
-                "; Año=" + this.year +
-                "; Duracion=" + this.length +
-                "; Visto=" + this.viewed + " ; " + text;
+        */
+        return ":: model.Pelicula:"+ NEWLINE + "Titulo ='" + super.getTitle() + '\'' +
+                "; Genero='" + super.getGender() + '\'' +
+                "; Creador='" + super.getCreator() + '\'' +
+                "; Año=" + super.getYear() +
+                "; Duracion=" + super.getLength() +
+                "; Visto=" + this.viewed + " ; " ;//+ text;
     }
 
-
+/*
     @Override
     public void checkViewed() {
         if (viewed == false) {
@@ -159,4 +109,5 @@ public class Pelicula implements IVisualizable {
         }
         return value;
     }
+ */
 }
