@@ -16,7 +16,11 @@ Crea una clase llamada model.Pelicula con las siguientes características:
 3. En principio, las clases anteriores no son padre-hija, pero sí tienen atributos en común. Realiza el análisis correcto e impleméntalo para tener un óptimo resultado.
  */
 
-public class Audiovisual {
+import java.util.ArrayList;
+
+public class Audiovisual implements IVisualizable {
+    protected static ArrayList<String> listMovieViewed = new ArrayList<>();//almacena lista de peliculas visualizadas // se envia a la clase padre.
+    protected static ArrayList<String> listSeriesViewed = new  ArrayList<>();//almacena lista de Series visualizadas // se envia a la clase hija.
     //attributes //atributos
     private String title; //titulo
     private String gender; //genero
@@ -71,8 +75,30 @@ public class Audiovisual {
     public void setViewed(boolean viewed) {
         this.viewed = viewed;
     }
+
+    @Override
+     public void checkViewed() {
+        if (viewed == false) {
+            viewed = true;
+        } else {
+            isViewed(); // en caso que la pelicula ya fue vista , llama al metodo "isViewed()" , marcara como vista.
+        }
+    }
     //isQuestions
     public boolean isViewed() {
         return viewed;
+    }
+    @Override
+    public int timeViewed() {
+        return 0;
+    }
+    @Override
+    public String messageViewed(String movie, String time) {
+        return null;
+    }
+
+    @Override
+    public void listMovieViewed(String movie) {
+
     }
 }

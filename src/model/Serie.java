@@ -21,14 +21,9 @@ import java.util.Scanner;
  */
 public class Serie extends Audiovisual {
     protected static int sizeSeriesViewed = 0;
-    protected static String [][] listSeriesViewed = new String[5][2];//almacena lista de Series visualizadas // se envia a la clase hija.
     protected static Serie longerSeason;
-
     //attributes //atributos
     private  int numberSeason = 1;
-
-
-
     //Builders //constructores
     public Serie(){
        super();
@@ -36,7 +31,6 @@ public class Serie extends Audiovisual {
     public Serie(String title , String creator){
         super(title,creator);
     }
-
     public Serie(String title, String gender, String creator, int length, int numberSeason) {
         super.setTitle(title);
         super.setGender(gender);
@@ -66,7 +60,6 @@ public class Serie extends Audiovisual {
             this.numberSeason = numberSeason;
         }
     }
-
     @Override
     public String toString() {
  //       String messageLongerSeason;
@@ -80,29 +73,26 @@ public class Serie extends Audiovisual {
                                 ", viewed=" + this.viewed +
                                 "\n" +"numberSeason: " + this.numberSeason + "::" ;//+ messageLongerSeason ;
     }
-/*
     @Override
     public void checkViewed() {
         if (viewed == false) {
             viewed = true;
-            listMovieViewed(this.getTitle());
-            System.out.println("La model.Serie "+ this.getTitle() + " cambio a un estado de `Visto´");
+            listSeriesViewed.add(this.getTitle());
+            System.out.println("::La Serie "+ this.getTitle() + " cambio a un estado de `Visto´");
         }else{
             isViewed();
         }
     }
-
     @Override
     public boolean isViewed() {
         if (viewed == true){
-            System.out.println("La model.Serie "+  this.getTitle() + " Ya Ha Sido Vista");
+            System.out.println("La Serie "+  this.getTitle() + " Ya Ha Sido Vista");
             return true;
         }else{
-            System.out.println("La model.Serie "+ this.getTitle() + " No Ha Sido Vista");
+            System.out.println("La Serie "+ this.getTitle() + " No Ha Sido Vista");
             return false;
         }
     }
-
     @Override
     public int timeViewed() {
         if (viewed = true){
@@ -118,9 +108,8 @@ public class Serie extends Audiovisual {
         }else{
             return (this.getLength() - this.getLength());
         }
-
     }
-
+/*
     @Override
     public String messageViewed(String movie, String time) {
         String message;

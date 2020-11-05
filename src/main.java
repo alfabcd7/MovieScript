@@ -24,15 +24,15 @@ public class main {
 
 
         //Bucle que busca la model.Serie con mayor temporadas.
-      //  for (Serie listOfSeries : arraySerie) {
-       //     Serie.whichSeasonIsLonger(listOfSeries);
-        //}
+        for (ArrayList<Serie> listOfSeries : series) {
+            Serie.whichSeasonIsLonger(listOfSeries);
+        }
                   // Fin del bucle///
 
         //Marca en visto algunas Películas y Series con el método marcarVisto()
         System.out.println(NEWLINE + NEWLINE);
         System.out.println("::Marcar Las Peliculas y Series que ya fueron vistas::");
-        /*
+
         ///Marcar Visto peliculas///
         movies.get(0).checkViewed(); //checkViewed() = MarcarVisto();
         movies.get(2).checkViewed();
@@ -40,9 +40,8 @@ public class main {
         series.get(0).checkViewed();
         series.get(4).checkViewed();
 
-
         // Imprimir lista de peliculas visualizadas
-        System.out.println("\n\n");
+        System.out.println(NEWLINE + NEWLINE);
         System.out.println("::Mostrar Lista de Peliculas y Series Vistas con el tiempo de Visualizacion::");
         printListOfViewed(Pelicula.listMovieViewed,Serie.listSeriesViewed);
         //llamando al metodo toString de cada clase para imprimir la informacion de las peliculas y series.
@@ -66,7 +65,7 @@ public class main {
             System.out.println(toPrint.messageViewed(listSeries[i][0],listSeries[i][1]));
         }
 
-         */
+
     }
 
 

@@ -2,13 +2,13 @@ package model;
 
 import model.IVisualizable;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 
 public class Pelicula extends Audiovisual{
     final String NEWLINE = "\n";
     protected static int sizeMoviesViewed = 0; // se almacena el conteo de peliculas marcada como vistas
-    protected static String [][] listMovieViewed = new String[5][2]; //almacena lista de peliculas visualizadas // se envia a la clase padre.
 
 
 
@@ -39,14 +39,13 @@ public class Pelicula extends Audiovisual{
                 "; Visto=" + this.viewed + " ; " ;//+ text;
     }
 
-/*
+
     @Override
     public void checkViewed() {
         if (viewed == false) {
             viewed = true;
-            listMovieViewed(this.title); //llama metodo listMovieViewed para agregarlo a la lista de peliculas visualizadas.
-            System.out.println("La pelicula " + this.title + " cambio a un estado de `Visto´");//mensaje de cambio a visto
-
+            listMovieViewed.add(this.getTitle()); //llama metodo listMovieViewed para agregarlo a la lista de peliculas visualizadas.
+            System.out.println("La pelicula " + this.getTitle() + " cambio a un estado de `Visto´");//mensaje de cambio a visto
         } else {
             isViewed(); // en caso que la pelicula ya fue vista , llama al metodo "isViewed()" , marcara como vista.
         }
@@ -55,31 +54,31 @@ public class Pelicula extends Audiovisual{
     @Override
     public boolean isViewed() {
         if (viewed == true) { //si es true
-            System.out.println("La model.Pelicula " + this.title + " Ya Ha Sido Vista"); //imprime esto
+            System.out.println("La Pelicula " + this.getTitle() + " Ya Ha Sido Vista"); //imprime esto
             return true;
         } else { //sino
-            System.out.println("La model.Pelicula " + this.title + " No Ha Sido Vista");//esto
+            System.out.println("La Pelicula " + this.getTitle() + " No Ha Sido Vista");//esto
             return false;
         }
     }
-
     @Override
+    //REVISAR, NO CONVENCE.
     public int timeViewed() {
         if (viewed = true) {//si esta marcada como vista
-            if (this.length == 0) {
+            if (this.getLength() == 0) {
                 do {
                     Scanner sc = new Scanner(System.in);
-                    System.out.println("No existe una duracion de pelicula establecida como :" + this.title + " , ingreselo(Obligatoriamente) :");
-                    this.length = sc.nextInt();
-                }while (this.length == 0);
-                System.out.println("Se establecio un total de " + this.length + " minutos a la pelicula " + this.getTitle());
+                    System.out.println("No existe una duracion de pelicula establecida para el titulo de :" + this.getTitle() + " , ingreselo(Obligatoriamente) :");
+                    this.setLength(sc.nextInt());
+                }while (this.getLength()== 0);
+                System.out.println("Se establecio un total de " + this.getLength() + " minutos a la pelicula " + this.getTitle());
             }
-            return this.length; //retorna la longitud
+            return this.getLength(); //retorna la longitud
         } else {
-            return (this.length - this.length);//si es falsa , retorna cero
+            return (this.getLength() - this.getLength());//si es falsa , retorna cero
         }
     }
-
+/*
 
     public String messageViewed(String movie, String time) {
         String message;
