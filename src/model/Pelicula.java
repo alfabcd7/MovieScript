@@ -10,9 +10,6 @@ public class Pelicula extends Audiovisual{
     final String NEWLINE = "\n";
     protected static int sizeMoviesViewed = 0; // se almacena el conteo de peliculas marcada como vistas
 
-
-
-
     //Builders //constructores
     public Pelicula() { //default constructor
     }
@@ -41,16 +38,15 @@ public class Pelicula extends Audiovisual{
 
 
     @Override
-    public void checkViewed() {
+    public void checkViewed() { //metodo heredado de Audiovisual, es posible aplicar poliformismo.
         if (viewed == false) {
             viewed = true;
             listMovieViewed.add(this.getTitle()); //llama metodo listMovieViewed para agregarlo a la lista de peliculas visualizadas.
             System.out.println("La pelicula " + this.getTitle() + " cambio a un estado de `Visto´");//mensaje de cambio a visto
         } else {
-            isViewed(); // en caso que la pelicula ya fue vista , llama al metodo "isViewed()" , marcara como vista.
+            isViewed(); // en caso que la pelicula ya fue vista , llama al metodo "isViewed()" ,
         }
     }
-
     @Override
     public boolean isViewed() {
         if (viewed == true) { //si es true
@@ -59,6 +55,13 @@ public class Pelicula extends Audiovisual{
         } else { //sino
             System.out.println("La Pelicula " + this.getTitle() + " No Ha Sido Vista");//esto
             return false;
+        }
+    }
+    @Override
+    public void printListOfAudiovisualViewed(ArrayList<Audiovisual> listAudiovisualToPrint){
+        System.out.println("La lista de peliculas visualizadas es la siguiente: ");
+        for (Audiovisual audiovisuals : listAudiovisualToPrint) {
+            System.out.println(k++ + ".-" + audiovisuals.getTitle() + " fueron visualizados una cantidad de " + audiovisuals.timeViewed() + " minutos");
         }
     }
     @Override

@@ -1,5 +1,6 @@
 package model;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /*
@@ -93,6 +94,16 @@ public class Serie extends Audiovisual {
             return false;
         }
     }
+
+    @Override
+    public void printListOfAudiovisualViewed(ArrayList<Audiovisual> listAudiovisualToPrint) {
+        System.out.println("La lista de Series visualizadas es la siguiente: ");
+        for (Audiovisual audiovisuals : listAudiovisualToPrint) {
+            System.out.println(k++ + ".-"  + audiovisuals.getTitle() + " fueron visualizados una cantidad de " + audiovisuals.timeViewed() + " minutos");
+        }
+    }
+    }
+
     @Override
     public int timeViewed() {
         if (viewed = true){

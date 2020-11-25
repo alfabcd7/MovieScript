@@ -21,6 +21,7 @@ import java.util.ArrayList;
 public class Audiovisual implements IVisualizable {
     protected static ArrayList<String> listMovieViewed = new ArrayList<>();//almacena lista de peliculas visualizadas // se envia a la clase padre.
     protected static ArrayList<String> listSeriesViewed = new  ArrayList<>();//almacena lista de Series visualizadas // se envia a la clase hija.
+    static int  k = 1;
     //attributes //atributos
     private String title; //titulo
     private String gender; //genero
@@ -76,29 +77,38 @@ public class Audiovisual implements IVisualizable {
         this.viewed = viewed;
     }
 
+
+    //method
     @Override
-     public void checkViewed() {
-        if (viewed == false) {
-            viewed = true;
+    public void printListOfAudiovisualViewed(ArrayList<Audiovisual> listAudiovisualToPrint){
+        for (Audiovisual audiovisuals : listAudiovisualToPrint) {
+            System.out.println(k++ + ".-" + audiovisuals.getTitle() + " fueron visualizados una cantidad de " + audiovisuals.timeViewed());
+        }
+
+    }
+    //Override methods
+    @Override
+     public void checkViewed() { //este metodo esta siendo implementado con la interfaz,
+        // permitira heredar a otras clases con el plus de aplicar poliformismo a las subclases.
+        if (viewed == false) { //si es falso
+            viewed = true; //cambiar a true
         } else {
-            isViewed(); // en caso que la pelicula ya fue vista , llama al metodo "isViewed()" , marcara como vista.
+            isViewed(); // en caso que no sea FALSE, mandar el estado de la variable a quien este llamandola.
         }
     }
     //isQuestions
     public boolean isViewed() {
-        return viewed;
+        if (viewed == true) { //si es true
+            System.out.println("El contenido Audiovisual" + this.getTitle() + " Ya Ha Sido Vista"); //imprime esto
+            return true;
+        } else { //sino
+            System.out.println("El contenido Audiovisual " + this.getTitle() + " No Ha Sido Vista");//esto
+            return false;
+        }
     }
     @Override
     public int timeViewed() {
         return 0;
     }
-    @Override
-    public String messageViewed(String movie, String time) {
-        return null;
-    }
 
-    @Override
-    public void listMovieViewed(String movie) {
-
-    }
 }

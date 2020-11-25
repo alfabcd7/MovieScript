@@ -1,8 +1,8 @@
 /*
 5. Ahora crea una clase ejecutable y realiza lo siguiente:
-• Crea dos arrayLists de 5 elementos cada uno. Unos de Peliculas y otro de Series.
-• Crea un objeto en cada posición del array con los valores que desees. Puedes usar distintos constructores.
-• Marca en visto algunas Películas y Series con el método marcarVisto()
+• Crea dos arrayLists de 5 elementos cada uno. Unos de Peliculas y otro de Series. DONE
+• Crea un objeto en cada posición del array con los valores que desees. Puedes usar distintos constructores. DONE
+• Marca en visto algunas Películas y Series con el método marcarVisto() DONE
 • Muestra una lista de las Películas y Series que se visualizaron y un detalle de los minutos/segundos visualizados.
 • Por último, indica la serie con más temporadas y la película del año más reciente. Muéstralos en pantalla con toda su información (usa el método toString()).
  */
@@ -32,7 +32,6 @@ public class main {
         //Marca en visto algunas Películas y Series con el método marcarVisto()
         System.out.println(NEWLINE + NEWLINE);
         System.out.println("::Marcar Las Peliculas y Series que ya fueron vistas::");
-
         ///Marcar Visto peliculas///
         movies.get(0).checkViewed(); //checkViewed() = MarcarVisto();
         movies.get(2).checkViewed();
