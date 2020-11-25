@@ -102,7 +102,7 @@ public class Serie extends Audiovisual {
             System.out.println(k++ + ".-"  + audiovisuals.getTitle() + " fueron visualizados una cantidad de " + audiovisuals.timeViewed() + " minutos");
         }
     }
-    }
+
 
     @Override
     public int timeViewed() {
@@ -136,6 +136,8 @@ public class Serie extends Audiovisual {
             listSeriesViewed[sizeSeriesViewed - 1][1] = Integer.toString(timeViewed()); //capturo la duracion de la model.Serie y la paso a string.
         }
     }
+
+ */
     public static void whichSeasonIsLonger(Serie serie) { //metodo para detectar cual es la serie con mayor temporada
         if (longerSeason == null){ //si el objeto sigue nulo o es corrido por primera vez
             longerSeason = serie; // apunta al objeto pasado como parametro
@@ -146,5 +148,5 @@ public class Serie extends Audiovisual {
         }
     }
 
- */
+
 }

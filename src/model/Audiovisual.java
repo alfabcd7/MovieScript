@@ -19,8 +19,10 @@ Crea una clase llamada model.Pelicula con las siguientes características:
 import java.util.ArrayList;
 
 public class Audiovisual implements IVisualizable {
-    protected static ArrayList<String> listMovieViewed = new ArrayList<>();//almacena lista de peliculas visualizadas // se envia a la clase padre.
-    protected static ArrayList<String> listSeriesViewed = new  ArrayList<>();//almacena lista de Series visualizadas // se envia a la clase hija.
+    private ArrayList <Pelicula> movies = new ArrayList<>();
+    private ArrayList<Serie> series = new ArrayList<>();
+    protected static Pelicula movieLogged;
+    protected static Serie serieLogged;//almacena lista de Series visualizadas // se envia a la clase hija.
     static int  k = 1;
     //attributes //atributos
     private String title; //titulo
@@ -31,13 +33,13 @@ public class Audiovisual implements IVisualizable {
     protected boolean viewed = false;//visto // tiene un modificador de acceso protected para que la clase hija
 
     //Builders //constructores
-    Audiovisual(){
+    public Audiovisual(){
     }
-    Audiovisual(String title , String creator){
+    public Audiovisual(String title , String creator){
         this.title = title;
         this.creator = creator;
     }
-    Audiovisual(String title , String gender , String creator ,int year, int length){
+    public Audiovisual(String title , String gender , String creator ,int year, int length){
         this.title = title;
         this.creator = creator;
         this.gender = gender;
@@ -60,6 +62,10 @@ public class Audiovisual implements IVisualizable {
     public int getLength() {
         return length;
     }
+    public ArrayList<Pelicula> getMoviesCatalogue(){
+        setMovies();
+        return movies;
+    }
     //Setters
     public void setTitle(String title) {
         this.title = title;
@@ -78,6 +84,21 @@ public class Audiovisual implements IVisualizable {
     }
 
 
+
+    private void setMovies(){
+        movies.add(new Pelicula("The Avengers", "Accion", "Marvel", 2012, 150));
+        movies.add(new Pelicula("Iron Man 3", "Accion", "Marvel", 2013, 120));
+        movies.add(new Pelicula("Wonder Woman", "Apasionante , Inspirador , Emocionante", "Warner Bros", 2017, 141));
+        movies.add(new Pelicula("No Se Aceptan Devoluciones", "Comedia , Drama", "Mexicana", 2013, 121));
+        movies.add(new Pelicula("Proyecto Power", "Accion , Fantasia , Emocionante", "Netflix", 2020, 113));
+    }
+    private void setSeriesCatalogue(){
+        series.add(new Serie("Cobra Kai", "Drama Tv , Accion y Aventuras", "Netflix", 121,2));
+        series.add(new Serie("Sense8", "Netflix"));
+        series.add(new Serie("Outlander", "Netflix"));
+        series.add(new Serie("The Seven Deadly Sins", "Drama Tv , Accion , Anime , ,Romance, Aventuras", "Netflix", 30,4));
+        series.add(new Serie("Umbrella Academy","Accion , Drama , Superpoderes","Netflix",30,2));
+    }
     //method
     @Override
     public void printListOfAudiovisualViewed(ArrayList<Audiovisual> listAudiovisualToPrint){
@@ -90,11 +111,6 @@ public class Audiovisual implements IVisualizable {
     @Override
      public void checkViewed() { //este metodo esta siendo implementado con la interfaz,
         // permitira heredar a otras clases con el plus de aplicar poliformismo a las subclases.
-        if (viewed == false) { //si es falso
-            viewed = true; //cambiar a true
-        } else {
-            isViewed(); // en caso que no sea FALSE, mandar el estado de la variable a quien este llamandola.
-        }
     }
     //isQuestions
     public boolean isViewed() {

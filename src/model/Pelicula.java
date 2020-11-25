@@ -65,7 +65,6 @@ public class Pelicula extends Audiovisual{
         }
     }
     @Override
-    //REVISAR, NO CONVENCE.
     public int timeViewed() {
         if (viewed = true) {//si esta marcada como vista
             if (this.getLength() == 0) {
