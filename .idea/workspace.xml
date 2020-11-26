@@ -23,6 +23,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/Audiovisual.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Audiovisual.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/IVisualizable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/IVisualizable.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/Pelicula.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Pelicula.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/Serie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Serie.java" afterDir="false" />
     </list>
@@ -49,7 +50,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../MyMedicalAppointments" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../myMedicalAppoinsments" />
   </component>
   <component name="RecentsManager">
     <key name="ExtractSuperBase.RECENT_KEYS">
@@ -104,9 +105,10 @@
     <state x="452" y="129" key="#com.intellij.ide.util.MemberChooser/0.0.1536.864@0.0.1536.864" timestamp="1606269548857" />
     <state x="765" y="223" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1600884762535" />
     <state x="2685" y="223" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1604294770067" />
-    <state x="2660" y="294" key="FileChooserDialogImpl" timestamp="1606338584678">
-      <screen x="1920" y="0" width="1920" height="1080" />
+    <state x="592" y="235" key="FileChooserDialogImpl" timestamp="1606353887018">
+      <screen x="0" y="0" width="1536" height="864" />
     </state>
+    <state x="592" y="235" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1606353887018" />
     <state x="2660" y="294" key="FileChooserDialogImpl/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1606338584678" />
     <state width="1860" height="360" key="GridCell.Tab.0.bottom" timestamp="1604523282764">
       <screen x="1920" y="0" width="1920" height="1080" />

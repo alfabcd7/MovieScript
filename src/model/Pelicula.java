@@ -7,6 +7,7 @@ import java.util.Scanner;
 
 
 public class Pelicula extends Audiovisual{
+    private ArrayList <Pelicula> movies = new ArrayList<>();
     final String NEWLINE = "\n";
     protected static int sizeMoviesViewed = 0; // se almacena el conteo de peliculas marcada como vistas
 
@@ -18,6 +19,18 @@ public class Pelicula extends Audiovisual{
     }
     public Pelicula(String title, String gender, String creator, int year, int length) { // constructor con todos los atributos.
         super(title,gender,creator,year,length);
+    }
+
+    public ArrayList<Pelicula> getMoviesCatalogue(){
+        setMoviesCatalogue();
+        return movies;
+    }
+    private void setMoviesCatalogue(){
+        movies.add(new Pelicula("The Avengers", "Accion", "Marvel", 2012, 150));
+        movies.add(new Pelicula("Iron Man 3", "Accion", "Marvel", 2013, 120));
+        movies.add(new Pelicula("Wonder Woman", "Apasionante , Inspirador , Emocionante", "Warner Bros", 2017, 141));
+        movies.add(new Pelicula("No Se Aceptan Devoluciones", "Comedia , Drama", "Mexicana", 2013, 121));
+        movies.add(new Pelicula("Proyecto Power", "Accion , Fantasia , Emocionante", "Netflix", 2020, 113));
     }
     @Override
     public String toString() {

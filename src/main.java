@@ -17,25 +17,28 @@ public class main {
     public static void main(String[] args) {
         Audiovisual catalogue = new Audiovisual();
         final String NEWLINE = "\n";
-
         //Construccion de Objetos
         System.out.println(NEWLINE + NEWLINE);
         System.out.println("::Construccion de Objetos y Asignacion Default de Visto::");
-        catalogue.
-        //Bucle que busca la model.Serie con mayor temporadas.
-        for (Serie listOfSeries : series) {
-            Serie.whichSeasonIsLonger(listOfSeries);
-        }
-                  // Fin del bucle///
-        //Marca en visto algunas Películas y Series con el método marcarVisto()
+        catalogue.showMoviesCatalogue();
+        catalogue.showSeriesCatalogue();
         System.out.println(NEWLINE + NEWLINE);
         System.out.println("::Marcar Las Peliculas y Series que ya fueron vistas::");
+        //Marca en visto algunas Películas y Series con el método marcarVisto()
         ///Marcar Visto peliculas///
         movies.get(0).checkViewed(); //checkViewed() = MarcarVisto();
         movies.get(2).checkViewed();
         //Marcar Visto Series//
         series.get(0).checkViewed();
         series.get(4).checkViewed();
+       /* //Bucle que busca la model.Serie con mayor temporadas.
+        for (Serie listOfSeries : series) {
+            Serie.whichSeasonIsLonger(listOfSeries);
+        }
+
+        */
+                  // Fin del bucle///
+
         // Imprimir lista de peliculas visualizadas
         System.out.println(NEWLINE + NEWLINE);
         System.out.println("::Mostrar Lista de Peliculas y Series Vistas con el tiempo de Visualizacion::");

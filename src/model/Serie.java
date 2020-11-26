@@ -21,6 +21,7 @@ import java.util.Scanner;
 3. En principio, las clases anteriores no son padre-hija, pero sí tienen atributos en común. Realiza el análisis correcto e impleméntalo para tener un óptimo resultado.
  */
 public class Serie extends Audiovisual {
+    private ArrayList<Serie> series = new ArrayList<>();
     protected static int sizeSeriesViewed = 0;
     protected static Serie longerSeason;
     //attributes //atributos
@@ -47,7 +48,18 @@ public class Serie extends Audiovisual {
     public int getNumberSeason() {
         return numberSeason;
     }
+    public ArrayList<Serie> getSeriesCatalogue(){
+        setSeriesCatalogue();
+        return series;
+    }
     //Setters
+    private void setSeriesCatalogue(){
+        series.add(new Serie("Cobra Kai", "Drama Tv , Accion y Aventuras", "Netflix", 121,2));
+        series.add(new Serie("Sense8", "Netflix"));
+        series.add(new Serie("Outlander", "Netflix"));
+        series.add(new Serie("The Seven Deadly Sins", "Drama Tv , Accion , Anime , ,Romance, Aventuras", "Netflix", 30,4));
+        series.add(new Serie("Umbrella Academy","Accion , Drama , Superpoderes","Netflix",30,2));
+    }
     public void setNumberSeason(int numberSeason) {
         if (numberSeason == 0) {
             do {
