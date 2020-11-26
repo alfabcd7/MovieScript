@@ -19,8 +19,8 @@ Crea una clase llamada model.Pelicula con las siguientes características:
 import java.util.ArrayList;
 
 public class Audiovisual implements IVisualizable {
-    public ArrayList <String> moviesTitlesAvailables = new ArrayList<>();
-    public ArrayList <String> seriesTitlesAvailables = new ArrayList<>();
+    private  ArrayList <String> moviesTitlesAvailables = new ArrayList<>();
+    private  ArrayList <String> seriesTitlesAvailables = new ArrayList<>();
     protected static Pelicula movieLogged;
     protected static Serie serieLogged;//almacena lista de Series visualizadas // se envia a la clase hija.
     static int  k = 1;
@@ -83,6 +83,10 @@ public class Audiovisual implements IVisualizable {
 
 
     //method
+    public void createCatalogue(){
+        movieLogged.getAllPackageMoviesCatalogue();
+        serieLogged.getAllPackageSeriesCatalogue();
+    }
      public void showMoviesCatalogue(){
          for (Pelicula movieCatalog : movieLogged.getMoviesCatalogue()) {
              moviesTitlesAvailables.add(movieCatalog.getTitle());
@@ -118,8 +122,24 @@ public class Audiovisual implements IVisualizable {
 
     }
     @Override
-     public void checkViewed() { //este metodo esta siendo implementado con la interfaz,
-        // permitira heredar a otras clases con el plus de aplicar poliformismo a las subclases.
+     public void checkViewed(String nameAudiovisual) {
+        if (isAvailableArticleMovie(nameAudiovisual)) {
+            for (Pelicula movieCatalog : movieLogged.getMoviesCatalogue()) {
+               if (movieCatalog.getTitle().equals(nameAudiovisual));
+               movieLogged = movieCatalog;
+               break;
+            }
+            movieLogged.checkViewed(movieLogged);
+        }else if (isAvailableArticleSerie(nameAudiovisual)){
+            for (Serie serieCatalog : serieLogged.getSeriesCatalogue()) {
+                if (serieCatalog.getTitle().equals(nameAudiovisual));
+                serieLogged = serieCatalog;
+                break;
+            }
+            serieLogged.checkViewed(serieLogged);
+        }else{
+            System.out.println("NO existe un titulo con el nombre especifcado dentro de nuestro catalogo, elige otro....");
+        }
     }
     //isQuestions
     public boolean isViewed() {
@@ -130,6 +150,20 @@ public class Audiovisual implements IVisualizable {
             System.out.println("El contenido Audiovisual " + this.getTitle() + " No Ha Sido Vista");//esto
             return false;
         }
+    }
+    private Boolean isAvailableArticleMovie(String nameAudiovisual){
+        for (String movieCatalog : moviesTitlesAvailables ) {
+            if (movieCatalog.equals(nameAudiovisual))
+                return true;
+        }
+        return false;
+    }
+    private Boolean isAvailableArticleSerie(String nameAudiovisual){
+        for (String serieCatalog : seriesTitlesAvailables ) {
+            if (serieCatalog.equals(nameAudiovisual))
+                return true;
+        }
+        return false;
     }
     @Override
     public int timeViewed() {

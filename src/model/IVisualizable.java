@@ -9,7 +9,7 @@ package model;/*
 import java.util.ArrayList;
 
 public interface IVisualizable {
-   void checkViewed(); // marcarVisto() //cambia el atributo de visto a true
+   void checkViewed(String nameAudivisual); // marcarVisto() //cambia el atributo de visto a true
    boolean isViewed(); //esVisto()//devuelve el estado del atributo visto
    int timeViewed();//Devuelve el tiempo en minutos7segundos q se visualizaco el video.
    void printListOfAudiovisualViewed(ArrayList<Audiovisual> listAudiovisualToPrint);

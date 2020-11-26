@@ -8,8 +8,10 @@ import java.util.Scanner;
 
 public class Pelicula extends Audiovisual{
     private ArrayList <Pelicula> movies = new ArrayList<>();
+    private ArrayList<Pelicula> listMovieViewed = new ArrayList<>();
     final String NEWLINE = "\n";
     protected static int sizeMoviesViewed = 0; // se almacena el conteo de peliculas marcada como vistas
+    private static int limitCreationMoviePackage = 0;
 
     //Builders //constructores
     public Pelicula() { //default constructor
@@ -22,15 +24,24 @@ public class Pelicula extends Audiovisual{
     }
 
     public ArrayList<Pelicula> getMoviesCatalogue(){
-        setMoviesCatalogue();
         return movies;
     }
-    private void setMoviesCatalogue(){
+    private void checkAvailableMovieCatalogue(Pelicula pelicula){
+        if (movies.size()< 0 && !movies.contains(pelicula));
+
+    }
+    protected void getAllPackageMoviesCatalogue(){
+        if (limitCreationMoviePackage >= 1) {
+            System.out.println("Solo se permite crear el paquete de peliculas una sola vez");
+        } else setAllPackageMoviesCatalogue();
+    }
+    private void setAllPackageMoviesCatalogue(){
         movies.add(new Pelicula("The Avengers", "Accion", "Marvel", 2012, 150));
         movies.add(new Pelicula("Iron Man 3", "Accion", "Marvel", 2013, 120));
         movies.add(new Pelicula("Wonder Woman", "Apasionante , Inspirador , Emocionante", "Warner Bros", 2017, 141));
         movies.add(new Pelicula("No Se Aceptan Devoluciones", "Comedia , Drama", "Mexicana", 2013, 121));
         movies.add(new Pelicula("Proyecto Power", "Accion , Fantasia , Emocionante", "Netflix", 2020, 113));
+        limitCreationMoviePackage++;
     }
     @Override
     public String toString() {
@@ -48,13 +59,10 @@ public class Pelicula extends Audiovisual{
                 "; Duracion=" + super.getLength() +
                 "; Visto=" + this.viewed + " ; " ;//+ text;
     }
-
-
-    @Override
-    public void checkViewed() { //metodo heredado de Audiovisual, es posible aplicar poliformismo.
+    public void checkViewed(Pelicula pelicula) { //metodo heredado de Audiovisual, es posible aplicar poliformismo.
         if (viewed == false) {
             viewed = true;
-            listMovieViewed.add(this.getTitle()); //llama metodo listMovieViewed para agregarlo a la lista de peliculas visualizadas.
+            listMovieViewed.add(pelicula); //llama metodo listMovieViewed para agregarlo a la lista de peliculas visualizadas.
             System.out.println("La pelicula " + this.getTitle() + " cambio a un estado de `Visto´");//mensaje de cambio a visto
         } else {
             isViewed(); // en caso que la pelicula ya fue vista , llama al metodo "isViewed()" ,

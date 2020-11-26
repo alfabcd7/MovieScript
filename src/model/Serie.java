@@ -22,8 +22,10 @@ import java.util.Scanner;
  */
 public class Serie extends Audiovisual {
     private ArrayList<Serie> series = new ArrayList<>();
+    private ArrayList<Serie> listSeriesViewed = new ArrayList<>();
     protected static int sizeSeriesViewed = 0;
     protected static Serie longerSeason;
+    private static int limitCreationSeriePackage = 0;
     //attributes //atributos
     private  int numberSeason = 1;
     //Builders //constructores
@@ -44,21 +46,29 @@ public class Serie extends Audiovisual {
         herede serie (Segun lo descrito en el problema) , por tanto existe la opcion de volver a sobrecargar
          el constructor pelicula o hacer lo dado , el cual encaja con la peticion del ejercicio.*/
     }
+
+
+
     //Getters
     public int getNumberSeason() {
         return numberSeason;
     }
     public ArrayList<Serie> getSeriesCatalogue(){
-        setSeriesCatalogue();
         return series;
     }
+    protected void getAllPackageSeriesCatalogue(){
+        if (limitCreationSeriePackage >= 1) {
+            System.out.println("Solo se permite crear el paquete de peliculas una sola vez");
+        } else  setAllPackageSeriesCatalogue();
+    }
     //Setters
-    private void setSeriesCatalogue(){
+    private void setAllPackageSeriesCatalogue(){
         series.add(new Serie("Cobra Kai", "Drama Tv , Accion y Aventuras", "Netflix", 121,2));
         series.add(new Serie("Sense8", "Netflix"));
         series.add(new Serie("Outlander", "Netflix"));
         series.add(new Serie("The Seven Deadly Sins", "Drama Tv , Accion , Anime , ,Romance, Aventuras", "Netflix", 30,4));
         series.add(new Serie("Umbrella Academy","Accion , Drama , Superpoderes","Netflix",30,2));
+        limitCreationSeriePackage++;
     }
     public void setNumberSeason(int numberSeason) {
         if (numberSeason == 0) {
@@ -86,11 +96,10 @@ public class Serie extends Audiovisual {
                                 ", viewed=" + this.viewed +
                                 "\n" +"numberSeason: " + this.numberSeason + "::" ;//+ messageLongerSeason ;
     }
-    @Override
-    public void checkViewed() {
+    public void checkViewed(Serie serie) {
         if (viewed == false) {
             viewed = true;
-            listSeriesViewed.add(this.getTitle());
+            listSeriesViewed.add(serie);
             System.out.println("::La Serie "+ this.getTitle() + " cambio a un estado de `Visto´");
         }else{
             isViewed();

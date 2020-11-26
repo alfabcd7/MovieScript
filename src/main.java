@@ -20,17 +20,18 @@ public class main {
         //Construccion de Objetos
         System.out.println(NEWLINE + NEWLINE);
         System.out.println("::Construccion de Objetos y Asignacion Default de Visto::");
-        catalogue.showMoviesCatalogue();
-        catalogue.showSeriesCatalogue();
+        catalogue.createCatalogue();
         System.out.println(NEWLINE + NEWLINE);
         System.out.println("::Marcar Las Peliculas y Series que ya fueron vistas::");
         //Marca en visto algunas Películas y Series con el método marcarVisto()
         ///Marcar Visto peliculas///
-        movies.get(0).checkViewed(); //checkViewed() = MarcarVisto();
-        movies.get(2).checkViewed();
+        catalogue.checkViewed("The Avengers");
+        catalogue.checkViewed("Iron Man 3");
+        catalogue.checkViewed("No Se Aceptan Devoluciones");
         //Marcar Visto Series//
-        series.get(0).checkViewed();
-        series.get(4).checkViewed();
+        catalogue.checkViewed("Cobra Kai");
+        catalogue.checkViewed("Outlander");
+        catalogue.checkViewed("Umbrella Academy");
        /* //Bucle que busca la model.Serie con mayor temporadas.
         for (Serie listOfSeries : series) {
             Serie.whichSeasonIsLonger(listOfSeries);
@@ -38,7 +39,6 @@ public class main {
 
         */
                   // Fin del bucle///
-
         // Imprimir lista de peliculas visualizadas
         System.out.println(NEWLINE + NEWLINE);
         System.out.println("::Mostrar Lista de Peliculas y Series Vistas con el tiempo de Visualizacion::");
