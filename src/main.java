@@ -8,11 +8,6 @@
  */
 
 import model.Audiovisual;
-import model.Pelicula;
-import model.Serie;
-
-import java.util.ArrayList;
-
 public class main {
     public static void main(String[] args) {
         Audiovisual catalogue = new Audiovisual();
@@ -32,21 +27,13 @@ public class main {
         catalogue.checkViewed("Cobra Kai");
         catalogue.checkViewed("Outlander");
         catalogue.checkViewed("Umbrella Academy");
-       /* //Bucle que busca la model.Serie con mayor temporadas.
-        for (Serie listOfSeries : series) {
-            Serie.whichSeasonIsLonger(listOfSeries);
-        }
-
-        */
-                  // Fin del bucle///
-        // Imprimir lista de peliculas visualizadas
         System.out.println(NEWLINE + NEWLINE);
         System.out.println("::Mostrar Lista de Peliculas y Series Vistas con el tiempo de Visualizacion::");
-
+        catalogue.printAllListOfAudiovisualViewed();
         //llamando al metodo toString de cada clase para imprimir la informacion de las peliculas y series.
         System.out.println("\n\n");
         System.out.println("::Mostrar informacion de todas las peliculas::");
-        for (int i = 0; i < arrayMovies.length ; i++) { // Podrias ser un for object?
+        /*for (int i = 0; i < arrayMovies.length ; i++) { // Podrias ser un for object?
             System.out.println(arrayMovies[i]);
         }
         for (int i = 0; i < arraySerie.length ; i++) {
@@ -56,3 +43,13 @@ public class main {
     }
 
     }
+     /* //Bucle que busca la model.Serie con mayor temporadas.
+        for (Serie listOfSeries : series) {
+            Serie.whichSeasonIsLonger(listOfSeries);
+        }
+
+        */
+// Fin del bucle///
+// Imprimir lista de peliculas visualizadas
+    }
+}

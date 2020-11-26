@@ -21,6 +21,7 @@ import java.util.ArrayList;
 public class Audiovisual implements IVisualizable {
     private  ArrayList <String> moviesTitlesAvailables = new ArrayList<>();
     private  ArrayList <String> seriesTitlesAvailables = new ArrayList<>();
+    public ArrayList<Audiovisual> catalogue = new ArrayList<>();
     protected static Pelicula movieLogged;
     protected static Serie serieLogged;//almacena lista de Series visualizadas // se envia a la clase hija.
     static int  k = 1;
@@ -84,16 +85,18 @@ public class Audiovisual implements IVisualizable {
 
     //method
     public void createCatalogue(){
-        movieLogged.getAllPackageMoviesCatalogue();
+        Pelicula.getAllPackageMoviesCatalogue();
+        showMoviesCatalogue();
         serieLogged.getAllPackageSeriesCatalogue();
+        showSeriesCatalogue();
     }
-     public void showMoviesCatalogue(){
+     private void showMoviesCatalogue(){
          for (Pelicula movieCatalog : movieLogged.getMoviesCatalogue()) {
              moviesTitlesAvailables.add(movieCatalog.getTitle());
          }
          printListOfAvailableContent(moviesTitlesAvailables, (byte) 0);
      }
-     public void showSeriesCatalogue(){
+     private void showSeriesCatalogue(){
          for (Serie serieCatalog : serieLogged.getSeriesCatalogue()) {
              seriesTitlesAvailables.add(serieCatalog.getTitle());
          }
@@ -115,11 +118,13 @@ public class Audiovisual implements IVisualizable {
      }
     //Override methods
     @Override
-    public void printListOfAudiovisualViewed(ArrayList<Audiovisual> listAudiovisualToPrint){
-        for (Audiovisual audiovisuals : listAudiovisualToPrint) {
-            System.out.println(k++ + ".-" + audiovisuals.getTitle() + " fueron visualizados una cantidad de " + audiovisuals.timeViewed());
+    public void printAllListOfAudiovisualViewed(){
+        for (Pelicula movieViewed: movieLogged.getListOfMoviesViewed()) {
+            movieViewed.toString(true);
         }
-
+        for (Serie serieViewed: serieLogged.getListSeriesViewed()) {
+            serieLogged.toString(true);
+        }
     }
     @Override
      public void checkViewed(String nameAudiovisual) {
@@ -169,5 +174,4 @@ public class Audiovisual implements IVisualizable {
     public int timeViewed() {
         return 0;
     }
-
 }

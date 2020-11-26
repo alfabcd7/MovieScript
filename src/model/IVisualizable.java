@@ -12,7 +12,7 @@ public interface IVisualizable {
    void checkViewed(String nameAudivisual); // marcarVisto() //cambia el atributo de visto a true
    boolean isViewed(); //esVisto()//devuelve el estado del atributo visto
    int timeViewed();//Devuelve el tiempo en minutos7segundos q se visualizaco el video.
-   void printListOfAudiovisualViewed(ArrayList<Audiovisual> listAudiovisualToPrint);
+   void printAllListOfAudiovisualViewed();
 
 
 }

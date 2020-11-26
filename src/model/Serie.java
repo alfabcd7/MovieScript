@@ -23,7 +23,7 @@ import java.util.Scanner;
 public class Serie extends Audiovisual {
     private ArrayList<Serie> series = new ArrayList<>();
     private ArrayList<Serie> listSeriesViewed = new ArrayList<>();
-    protected static int sizeSeriesViewed = 0;
+    final String NEWLINE = "\n";
     protected static Serie longerSeason;
     private static int limitCreationSeriePackage = 0;
     //attributes //atributos
@@ -96,6 +96,9 @@ public class Serie extends Audiovisual {
                                 ", viewed=" + this.viewed +
                                 "\n" +"numberSeason: " + this.numberSeason + "::" ;//+ messageLongerSeason ;
     }
+    public String toString(Boolean viewed){
+        return ":: model.Serie:"+ NEWLINE + "Titulo ='" + super.getTitle() + '\'' + timeViewed();
+    }
     public void checkViewed(Serie serie) {
         if (viewed == false) {
             viewed = true;
@@ -115,14 +118,16 @@ public class Serie extends Audiovisual {
             return false;
         }
     }
-
-    @Override
-    public void printListOfAudiovisualViewed(ArrayList<Audiovisual> listAudiovisualToPrint) {
-        System.out.println("La lista de Series visualizadas es la siguiente: ");
+    public ArrayList<Serie> getListSeriesViewed() {
+        return listSeriesViewed;
+    }
+        /*System.out.println("La lista de Series visualizadas es la siguiente: ");
         for (Audiovisual audiovisuals : listAudiovisualToPrint) {
             System.out.println(k++ + ".-"  + audiovisuals.getTitle() + " fueron visualizados una cantidad de " + audiovisuals.timeViewed() + " minutos");
         }
     }
+
+         */
 
 
     @Override

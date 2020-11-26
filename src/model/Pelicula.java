@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 
 public class Pelicula extends Audiovisual{
-    private ArrayList <Pelicula> movies = new ArrayList<>();
+    private static ArrayList <Pelicula> movies = new ArrayList<>();
     private ArrayList<Pelicula> listMovieViewed = new ArrayList<>();
     final String NEWLINE = "\n";
     protected static int sizeMoviesViewed = 0; // se almacena el conteo de peliculas marcada como vistas
@@ -26,16 +26,25 @@ public class Pelicula extends Audiovisual{
     public ArrayList<Pelicula> getMoviesCatalogue(){
         return movies;
     }
+    public ArrayList<Pelicula> getListOfMoviesViewed(){
+        return listMovieViewed;
+        /*System.out.println("La lista de peliculas visualizadas es la siguiente: ");
+        for (Pelicula movieViewed : listMovieViewed) {
+            System.out.println(k++ + ".-" + movieViewed.getTitle() + " fueron visualizados una cantidad de " + movieViewed.timeViewed() + " minutos");
+        }
+
+         */
+    }
     private void checkAvailableMovieCatalogue(Pelicula pelicula){
         if (movies.size()< 0 && !movies.contains(pelicula));
 
     }
-    protected void getAllPackageMoviesCatalogue(){
+    protected static void getAllPackageMoviesCatalogue(){
         if (limitCreationMoviePackage >= 1) {
             System.out.println("Solo se permite crear el paquete de peliculas una sola vez");
-        } else setAllPackageMoviesCatalogue();
+        } else setAllPackageMoviesCatalogue(movies);
     }
-    private void setAllPackageMoviesCatalogue(){
+    private static void setAllPackageMoviesCatalogue(ArrayList <Pelicula> movies){
         movies.add(new Pelicula("The Avengers", "Accion", "Marvel", 2012, 150));
         movies.add(new Pelicula("Iron Man 3", "Accion", "Marvel", 2013, 120));
         movies.add(new Pelicula("Wonder Woman", "Apasionante , Inspirador , Emocionante", "Warner Bros", 2017, 141));
@@ -59,6 +68,9 @@ public class Pelicula extends Audiovisual{
                 "; Duracion=" + super.getLength() +
                 "; Visto=" + this.viewed + " ; " ;//+ text;
     }
+    public String toString(Boolean viewed){
+        return ":: model.Pelicula:"+ NEWLINE + "Titulo ='" + super.getTitle() + '\'' + timeViewed();
+    }
     public void checkViewed(Pelicula pelicula) { //metodo heredado de Audiovisual, es posible aplicar poliformismo.
         if (viewed == false) {
             viewed = true;
@@ -78,13 +90,7 @@ public class Pelicula extends Audiovisual{
             return false;
         }
     }
-    @Override
-    public void printListOfAudiovisualViewed(ArrayList<Audiovisual> listAudiovisualToPrint){
-        System.out.println("La lista de peliculas visualizadas es la siguiente: ");
-        for (Audiovisual audiovisuals : listAudiovisualToPrint) {
-            System.out.println(k++ + ".-" + audiovisuals.getTitle() + " fueron visualizados una cantidad de " + audiovisuals.timeViewed() + " minutos");
-        }
-    }
+
     @Override
     public int timeViewed() {
         if (viewed = true) {//si esta marcada como vista
