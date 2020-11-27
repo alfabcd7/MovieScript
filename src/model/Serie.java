@@ -21,8 +21,8 @@ import java.util.Scanner;
 3. En principio, las clases anteriores no son padre-hija, pero sí tienen atributos en común. Realiza el análisis correcto e impleméntalo para tener un óptimo resultado.
  */
 public class Serie extends Audiovisual {
-    private ArrayList<Serie> series = new ArrayList<>();
-    private ArrayList<Serie> listSeriesViewed = new ArrayList<>();
+    private static ArrayList<Serie> series = new ArrayList<>();
+    private static  ArrayList<Serie> listSeriesViewed = new ArrayList<>();
     final String NEWLINE = "\n";
     protected static Serie longerSeason;
     private static int limitCreationSeriePackage = 0;
@@ -46,23 +46,20 @@ public class Serie extends Audiovisual {
         herede serie (Segun lo descrito en el problema) , por tanto existe la opcion de volver a sobrecargar
          el constructor pelicula o hacer lo dado , el cual encaja con la peticion del ejercicio.*/
     }
-
-
-
     //Getters
     public int getNumberSeason() {
         return numberSeason;
     }
-    public ArrayList<Serie> getSeriesCatalogue(){
+    public static ArrayList<Serie> getSeriesCatalogue(){
         return series;
     }
-    protected void getAllPackageSeriesCatalogue(){
+    protected static void getAllPackageSeriesCatalogue(){
         if (limitCreationSeriePackage >= 1) {
             System.out.println("Solo se permite crear el paquete de peliculas una sola vez");
-        } else  setAllPackageSeriesCatalogue();
+        } else  setAllPackageSeriesCatalogue(series);
     }
     //Setters
-    private void setAllPackageSeriesCatalogue(){
+    private static void setAllPackageSeriesCatalogue(ArrayList<Serie> series){
         series.add(new Serie("Cobra Kai", "Drama Tv , Accion y Aventuras", "Netflix", 121,2));
         series.add(new Serie("Sense8", "Netflix"));
         series.add(new Serie("Outlander", "Netflix"));
@@ -97,7 +94,10 @@ public class Serie extends Audiovisual {
                                 "\n" +"numberSeason: " + this.numberSeason + "::" ;//+ messageLongerSeason ;
     }
     public String toString(Boolean viewed){
-        return ":: model.Serie:"+ NEWLINE + "Titulo ='" + super.getTitle() + '\'' + timeViewed();
+        return ":: model.Serie:"+ NEWLINE + "Titulo ='" + super.getTitle() + '\'' + " Tiempo de visualizacion :" + timeViewed();
+    }
+    public String toString(int k){
+        return k + ".- Serie ='" + super.getTitle() + '\''  + " | N. Temporadas : " + this.numberSeason + NEWLINE;
     }
     public void checkViewed(Serie serie) {
         if (viewed == false) {
@@ -118,18 +118,9 @@ public class Serie extends Audiovisual {
             return false;
         }
     }
-    public ArrayList<Serie> getListSeriesViewed() {
+    public static ArrayList<Serie> getListSeriesViewed() {
         return listSeriesViewed;
     }
-        /*System.out.println("La lista de Series visualizadas es la siguiente: ");
-        for (Audiovisual audiovisuals : listAudiovisualToPrint) {
-            System.out.println(k++ + ".-"  + audiovisuals.getTitle() + " fueron visualizados una cantidad de " + audiovisuals.timeViewed() + " minutos");
-        }
-    }
-
-         */
-
-
     @Override
     public int timeViewed() {
         if (viewed = true){
@@ -146,33 +137,32 @@ public class Serie extends Audiovisual {
             return (this.getLength() - this.getLength());
         }
     }
-/*
-    @Override
-    public String messageViewed(String movie, String time) {
-        String message;
-        message = "la model.Serie : " + movie + " fue visualizada";
-        message = message + " con una duracion total de : " + time + " minutos por Episodio";
-        return message;
-    }
-
-    @Override
-    public void listMovieViewed(String movie) { //metodo para agregar a lista de Series visualizadas.
-        if (viewed == true) {
-            listSeriesViewed[sizeSeriesViewed++][0] = movie;//agrega a "lista de Series visualizadas" usando como indice el valor sizeSeriesViewed estatico para luego sumarle +1.
-            listSeriesViewed[sizeSeriesViewed - 1][1] = Integer.toString(timeViewed()); //capturo la duracion de la model.Serie y la paso a string.
+    public static void whichSeasonIsLonger(ArrayList<Serie> series) { //metodo para detectar cual es la serie con mayor temporada
+        int k = 0;
+        int j = 0;
+        ArrayList<Serie> longerSeries = new ArrayList<>();
+        longerSeries.add(series.get(j));
+            for (int i = 0; i < series.size(); i++) {
+                if (longerSeries.get(j).getNumberSeason() < series.get(i).getNumberSeason()) { // la serie ingresa es mayor que la anterior especificada
+                    longerSeries.remove(j);
+                    longerSeries.add(series.get(i));
+                }else if (series.get(i).getNumberSeason() > longerSeries.get(j).getNumberSeason() ){
+                    for (int l = 0; l < longerSeries.size() ; l++) {
+                        longerSeries.remove(l);
+                    }
+                    longerSeries.add(series.get(i));
+                    j = 0;
+                } else if (longerSeries.get(j).getNumberSeason() == series.get(i).getNumberSeason()) { //si ambas series tienen el mismo numero de temporadas
+                    if (longerSeries.get(j).getTitle().equals(series.get(i).getTitle())) {
+                        continue;
+                    } else {
+                        longerSeries.add(series.get(i));
+                        j++;
+                    }
+                }
+            }
+        for (Serie printLongerSeries: longerSeries) {
+            System.out.println(printLongerSeries.toString(++k));
         }
     }
-
- */
-    public static void whichSeasonIsLonger(Serie serie) { //metodo para detectar cual es la serie con mayor temporada
-        if (longerSeason == null){ //si el objeto sigue nulo o es corrido por primera vez
-            longerSeason = serie; // apunta al objeto pasado como parametro
-        }else if (longerSeason.numberSeason < serie.numberSeason ){ // la serie ingresa es mayor que la anterior especificada
-            longerSeason = serie;// apunta al objeto pasado como parametro
-        }else if (longerSeason.numberSeason == serie.numberSeason){ //si ambas series tienen el mismo numero de temporadas
-            serie = (longerSeason.getLength() < serie.getLength())? serie:longerSeason; //tomara la serie con mayor duracion por episodio
-        }
-    }
-
-
 }

@@ -13,6 +13,5 @@ public interface IVisualizable {
    boolean isViewed(); //esVisto()//devuelve el estado del atributo visto
    int timeViewed();//Devuelve el tiempo en minutos7segundos q se visualizaco el video.
    void printAllListOfAudiovisualViewed();
-
-
+   void printAudiovisualRecommendations();
 }

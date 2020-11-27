@@ -20,6 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9fc29f95-23c0-45fa-a018-4be67285b711" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/Audiovisual.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Audiovisual.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/IVisualizable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/IVisualizable.java" afterDir="false" />
@@ -109,38 +110,46 @@
     </state>
     <state x="592" y="235" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1606353887018" />
     <state x="2660" y="294" key="FileChooserDialogImpl/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1606338584678" />
-    <state width="1877" height="363" key="GridCell.Tab.0.bottom" timestamp="1606426937949">
+    <state width="1877" height="295" key="GridCell.Tab.0.bottom" timestamp="1606499544306">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="363" key="GridCell.Tab.0.bottom/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1606426937949" />
-    <state width="1877" height="363" key="GridCell.Tab.0.center" timestamp="1606426937949">
+    <state width="1877" height="295" key="GridCell.Tab.0.bottom/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1606499544306" />
+    <state width="1877" height="295" key="GridCell.Tab.0.center" timestamp="1606499544306">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="363" key="GridCell.Tab.0.center/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1606426937949" />
-    <state width="1877" height="363" key="GridCell.Tab.0.left" timestamp="1606426937949">
+    <state width="1877" height="295" key="GridCell.Tab.0.center/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1606499544306" />
+    <state width="1877" height="295" key="GridCell.Tab.0.left" timestamp="1606499544305">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="363" key="GridCell.Tab.0.left/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1606426937949" />
-    <state width="1877" height="363" key="GridCell.Tab.0.right" timestamp="1606426937949">
+    <state width="1877" height="295" key="GridCell.Tab.0.left/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1606499544305" />
+    <state width="1877" height="295" key="GridCell.Tab.0.right" timestamp="1606499544306">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="363" key="GridCell.Tab.0.right/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1606426937949" />
-    <state width="1877" height="363" key="GridCell.Tab.1.bottom" timestamp="1606426937949">
+    <state width="1877" height="295" key="GridCell.Tab.0.right/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1606499544306" />
+    <state width="1877" height="363" key="GridCell.Tab.1.bottom" timestamp="1606497200560">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="363" key="GridCell.Tab.1.bottom/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1606426937949" />
-    <state width="1877" height="363" key="GridCell.Tab.1.center" timestamp="1606426937949">
+    <state width="1877" height="363" key="GridCell.Tab.1.bottom/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1606497200560" />
+    <state width="1877" height="363" key="GridCell.Tab.1.center" timestamp="1606497200560">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="363" key="GridCell.Tab.1.center/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1606426937949" />
-    <state width="1877" height="363" key="GridCell.Tab.1.left" timestamp="1606426937949">
+    <state width="1877" height="363" key="GridCell.Tab.1.center/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1606497200560" />
+    <state width="1877" height="363" key="GridCell.Tab.1.left" timestamp="1606497200560">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="363" key="GridCell.Tab.1.left/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1606426937949" />
-    <state width="1877" height="363" key="GridCell.Tab.1.right" timestamp="1606426937949">
+    <state width="1877" height="363" key="GridCell.Tab.1.left/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1606497200560" />
+    <state width="1877" height="363" key="GridCell.Tab.1.right" timestamp="1606497200560">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="363" key="GridCell.Tab.1.right/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1606426937949" />
+    <state width="1877" height="363" key="GridCell.Tab.1.right/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1606497200560" />
+    <state width="968" height="548" key="XDebugger.FullValuePopup" timestamp="1606484164694">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="968" height="548" key="XDebugger.FullValuePopup/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1606484164694" />
+    <state x="2697" y="453" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1606511374698">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2697" y="453" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1606511374698" />
     <state x="32" y="44" width="1524" height="1067" maximized="true" key="dock-window-1" timestamp="1604501596187">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -158,17 +167,6 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2543" y="235" key="search.everywhere.popup/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1604386155892" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/model/Audiovisual.java</url>
-          <line>87</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/netflixScript$main.ic" NAME="main Coverage Results" MODIFIED="1600320980865" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

@@ -19,11 +19,11 @@ Crea una clase llamada model.Pelicula con las siguientes características:
 import java.util.ArrayList;
 
 public class Audiovisual implements IVisualizable {
-    private  ArrayList <String> moviesTitlesAvailables = new ArrayList<>();
-    private  ArrayList <String> seriesTitlesAvailables = new ArrayList<>();
-    public ArrayList<Audiovisual> catalogue = new ArrayList<>();
-    protected static Pelicula movieLogged;
-    protected static Serie serieLogged;//almacena lista de Series visualizadas // se envia a la clase hija.
+    //variables
+    private  ArrayList <String> moviesTitlesAvailables = new ArrayList<>(); //Almacena una lista de los titulos de peliculas disponibles(Cadena de Caracteres).
+    private  ArrayList <String> seriesTitlesAvailables = new ArrayList<>();//Almacena una lista de los titulos de series disponibles(Cadena de Caracteres).
+    protected  Pelicula movieLogged;
+    protected  Serie serieLogged;
     static int  k = 1;
     //attributes //atributos
     private String title; //titulo
@@ -31,11 +31,9 @@ public class Audiovisual implements IVisualizable {
     private String creator; //creador
     private int length;//duracion
     private int year; //año
-    protected boolean viewed = false;//visto // tiene un modificador de acceso protected para que la clase hija
-
+    protected boolean viewed = false;//visto
     //Builders //constructores
-    public Audiovisual(){
-    }
+    public Audiovisual(){ }
     public Audiovisual(String title , String creator){
         this.title = title;
         this.creator = creator;
@@ -60,11 +58,7 @@ public class Audiovisual implements IVisualizable {
     public String getCreator() {
         return creator;
     }
-    public int getLength() {
-        return length;
-    }
-
-
+    public int getLength() { return length; }
     //Setters
     public void setTitle(String title) {
         this.title = title;
@@ -81,23 +75,22 @@ public class Audiovisual implements IVisualizable {
     public void setViewed(boolean viewed) {
         this.viewed = viewed;
     }
-
-
-    //method
-    public void createCatalogue(){
-        Pelicula.getAllPackageMoviesCatalogue();
+    // publics methods
+    public void createCatalogue(){ //manda a construir los objetos que describen el catalogo disponible.
+        Pelicula.getAllPackageMoviesCatalogue();//Construye el catalogo de peliculas
         showMoviesCatalogue();
-        serieLogged.getAllPackageSeriesCatalogue();
+        Serie.getAllPackageSeriesCatalogue();
         showSeriesCatalogue();
     }
+    // privates methods
      private void showMoviesCatalogue(){
-         for (Pelicula movieCatalog : movieLogged.getMoviesCatalogue()) {
+         for (Pelicula movieCatalog : Pelicula.getMoviesCatalogue()) {
              moviesTitlesAvailables.add(movieCatalog.getTitle());
          }
          printListOfAvailableContent(moviesTitlesAvailables, (byte) 0);
      }
      private void showSeriesCatalogue(){
-         for (Serie serieCatalog : serieLogged.getSeriesCatalogue()) {
+         for (Serie serieCatalog : Serie.getSeriesCatalogue()) {
              seriesTitlesAvailables.add(serieCatalog.getTitle());
          }
          printListOfAvailableContent(seriesTitlesAvailables, (byte) 1);
@@ -118,35 +111,42 @@ public class Audiovisual implements IVisualizable {
      }
     //Override methods
     @Override
+    public void printAudiovisualRecommendations(){
+        Pelicula.recentMovie(Pelicula.getMoviesCatalogue());
+        Serie.whichSeasonIsLonger(Serie.getSeriesCatalogue());
+    }
+    @Override
     public void printAllListOfAudiovisualViewed(){
-        for (Pelicula movieViewed: movieLogged.getListOfMoviesViewed()) {
-            movieViewed.toString(true);
+        for (Pelicula movieViewed: Pelicula.getListOfMoviesViewed()) {
+            System.out.println(movieViewed.toString(true));
         }
-        for (Serie serieViewed: serieLogged.getListSeriesViewed()) {
-            serieLogged.toString(true);
+        for (Serie serieViewed: Serie.getListSeriesViewed()) {
+            System.out.println(serieViewed.toString(true));
         }
     }
     @Override
      public void checkViewed(String nameAudiovisual) {
         if (isAvailableArticleMovie(nameAudiovisual)) {
-            for (Pelicula movieCatalog : movieLogged.getMoviesCatalogue()) {
-               if (movieCatalog.getTitle().equals(nameAudiovisual));
-               movieLogged = movieCatalog;
-               break;
+            for (Pelicula movieCatalog : Pelicula.getMoviesCatalogue()) {
+               if (movieCatalog.getTitle().equals(nameAudiovisual)) {
+                   movieLogged = movieCatalog;
+                   break;
+               }
             }
             movieLogged.checkViewed(movieLogged);
         }else if (isAvailableArticleSerie(nameAudiovisual)){
-            for (Serie serieCatalog : serieLogged.getSeriesCatalogue()) {
-                if (serieCatalog.getTitle().equals(nameAudiovisual));
-                serieLogged = serieCatalog;
-                break;
+            for (Serie serieCatalog : Serie.getSeriesCatalogue()) {
+                if (serieCatalog.getTitle().equals(nameAudiovisual)) {
+                    serieLogged = serieCatalog;
+                    break;
+                }
             }
             serieLogged.checkViewed(serieLogged);
         }else{
             System.out.println("NO existe un titulo con el nombre especifcado dentro de nuestro catalogo, elige otro....");
         }
     }
-    //isQuestions
+    //Public isQuestions
     public boolean isViewed() {
         if (viewed == true) { //si es true
             System.out.println("El contenido Audiovisual" + this.getTitle() + " Ya Ha Sido Vista"); //imprime esto
@@ -156,6 +156,7 @@ public class Audiovisual implements IVisualizable {
             return false;
         }
     }
+    //Privates isQuestions
     private Boolean isAvailableArticleMovie(String nameAudiovisual){
         for (String movieCatalog : moviesTitlesAvailables ) {
             if (movieCatalog.equals(nameAudiovisual))
