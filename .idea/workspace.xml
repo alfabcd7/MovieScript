@@ -21,11 +21,8 @@
   <component name="ChangeListManager">
     <list default="true" id="9fc29f95-23c0-45fa-a018-4be67285b711" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Audiovisual.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Audiovisual.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/IVisualizable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/IVisualizable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/netflixDiagram.drawio" beforeDir="false" afterPath="$PROJECT_DIR$/netflixDiagram.drawio" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/Pelicula.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Pelicula.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Serie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Serie.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

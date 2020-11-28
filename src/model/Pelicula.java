@@ -34,9 +34,6 @@ public class Pelicula extends Audiovisual{
         movies.add(new Pelicula("Proyecto Power", "Accion , Fantasia , Emocionante", "Netflix", 2020, 113));
         limitCreationMoviePackage++;
     }
-    private void checkAvailableMovieCatalogue(Pelicula pelicula){
-        if (movies.size()< 0 && !movies.contains(pelicula));
-    }
     //Public Methods.
     public static void recentMovie(ArrayList<Pelicula> movie) {
         int k = 0;
