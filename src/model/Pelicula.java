@@ -1,6 +1,7 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 public class Pelicula extends Audiovisual{
     private static ArrayList <Pelicula> movies = new ArrayList<>();
@@ -83,9 +84,14 @@ public class Pelicula extends Audiovisual{
         if (viewed = true) {//si esta marcada como vista
             if (this.getLength() == 0) {
                 do {
-                    Scanner sc = new Scanner(System.in);
-                    System.out.println("No existe una duracion de pelicula establecida para el titulo de :" + this.getTitle() + " , ingreselo(Obligatoriamente) :");
-                    this.setLength(sc.nextInt());
+                    try{
+                        Scanner sc = new Scanner(System.in);
+                        System.out.println("No existe una duracion de pelicula establecida para el titulo de :" + this.getTitle() + " , ingreselo(Obligatoriamente) :");
+                        this.setLength(sc.nextInt());
+                    }catch (InputMismatchException e){
+                        System.out.println("NO ingresaste un valor valido.");
+                        System.out.println("intenta de nuevo.");
+                    }
                 }while (this.getLength()== 0);
                 System.out.println("Se establecio un total de " + this.getLength() + " minutos a la pelicula " + this.getTitle());
             }
